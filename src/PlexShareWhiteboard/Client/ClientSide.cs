@@ -32,6 +32,7 @@ namespace PlexShareWhiteboard.Client
         ClientSnapshotHandler _snapshotHandler;
 
         private static ClientSide instance;
+        private WhiteBoardViewModel _vm;
 
         // To create only a single instance of ClientSide
         public static ClientSide Instance
@@ -54,7 +55,13 @@ namespace PlexShareWhiteboard.Client
             userID = userId;
         }
 
-  
+        public void SetVMRef(WhiteBoardViewModel vm)
+        {
+            _vm = vm;
+            _communicator.SetVMRef(_vm);
+        }
+
+
         private ClientSide()
         {
             _communicator = ClientCommunicator.Instance;

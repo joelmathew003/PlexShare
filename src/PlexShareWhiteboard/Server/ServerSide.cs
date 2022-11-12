@@ -35,6 +35,9 @@ namespace PlexShareWhiteboard.Server
 
         private static ServerSide instance;
 
+        private WhiteBoardViewModel _vm;
+
+
         // To create only a single instance of ServerSide
         public static ServerSide Instance
         {
@@ -56,8 +59,12 @@ namespace PlexShareWhiteboard.Server
         {
             userID = userId;
         }
-        
 
+        public void SetVMRef(WhiteBoardViewModel vm)
+        {
+            _vm = vm;
+            _communicator.SetVMRef(_vm);
+        }
         public int GetServerListSize()
         {
             return objIdToObjectMap.Count();

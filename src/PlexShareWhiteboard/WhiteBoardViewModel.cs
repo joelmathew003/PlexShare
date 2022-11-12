@@ -82,6 +82,7 @@ namespace PlexShareWhiteboard
                 machine = ClientSide.Instance;
                 machine.SetUserId(userId);
             }
+            machine.SetVMRef(this);
 
         }
         public void IncrementId()
