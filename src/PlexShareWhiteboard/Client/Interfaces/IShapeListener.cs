@@ -29,7 +29,7 @@ namespace PlexShareWhiteboard.Client.Interfaces
 
         void SetUserId(string userId);
 
-        public void SetVMRef(WhiteBoardViewModel vm);
+        //public void SetVMRef(WhiteBoardViewModel vm);
 
     }
 }

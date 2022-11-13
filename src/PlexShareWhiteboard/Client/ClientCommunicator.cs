@@ -37,16 +37,17 @@ namespace PlexShareWhiteboard.Client
                     instance = new ClientCommunicator();
                     serializer = new Serializer();
                     communicator = CommunicationFactory.GetCommunicator();
+                    communicator.Subscribe(moduleIdentifier, WhiteBoardViewModel.Instance);
                 }
 
                 return instance;
             }
         }
-        public void SetVMRef(WhiteBoardViewModel vm)
-        {
-            _vm = vm;
-            communicator.Subscribe(moduleIdentifier, _vm);
-        }
+        //public void SetVMRef(WhiteBoardViewModel vm)
+        //{
+        //    _vm = vm;
+        //    communicator.Subscribe(moduleIdentifier, _vm);
+        //}
         public void SendToServer(WBServerShape clientUpdate)
         {
             try
